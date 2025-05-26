@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https://www.uv.mx; img-src 'self' https://www.uv.mx data:; style-src 'self' 'unsafe-inline'; script-src 'self'">
+    <title>Iniciar Sesión - Universidad Veracruzana</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            display: flex;
+            overflow: hidden;
+            width: 80%; /* Puedes ajustar este porcentaje si deseas que ocupe más o menos del ancho de la pantalla */
+            max-width: 1100px; /* Aumentado para hacerlo "más grande" */
+            min-height: 600px;  /* Añadido para darle más altura y sensación "cuadrada" */
+        }
+
+        .left-panel {
+            background-color: #0047AB; /* Match the blue color */
+            color: #fff;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 50%; /* Ajustado a 50% */
+        }
+
+        .logo-container {
+            margin-bottom: 20px;
+        }
+
+        .logo-img {
+            max-width: 200px;  
+            max-height: 200px; 
+        }
+
+        .university-name {
+            font-size: 1.5em;
+            text-align: center;
+        }
+
+        .right-panel {
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 50%; /* Ajustado a 50% */
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 1em;
+        }
+
+        .login-button {
+            display: block; /* Para que ocupe el ancho completo y permita márgenes */
+            width: 100%;
+            box-sizing: border-box; /* Para que padding no afecte el width total */
+            background-color: #0047AB;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            padding: 12px 20px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            text-align: center; /* Centrar texto del botón */
+        }
+
+        .login-button:hover {
+            background-color: #003380;
+        }
+
+        /* Nuevo estilo para el botón de redirección */
+        .redirect-link-button {
+            display: block; /* Para que ocupe el ancho completo */
+            width: 100%;
+            box-sizing: border-box;
+            background-color: #6c757d; /* Un color secundario, por ejemplo, gris */
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            padding: 12px 20px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            text-align: center;
+            text-decoration: none; /* Quitar subrayado del enlace */
+            margin-top: 10px; /* Espacio entre este botón y el de arriba */
+        }
+
+        .redirect-link-button:hover {
+            background-color: #5a6268;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left-panel">
+            <div class="logo-container">
+                <img src="logo_uv.jpg" alt="Universidad Veracruzana Logo" class="logo-img">
+            </div>
+            <h1 class="university-name">Universidad Veracruzana</h1>
+        </div>
+        <div class="right-panel">
+            <div class="form-group">
+                <label for="usuario">Usuario</label>
+                <input type="text" id="usuario" name="usuario">
+            </div>
+            <div class="form-group">
+                <label for="contrasena">Contraseña</label>
+                <input type="password" id="contrasena" name="contrasena">
+            </div>
+            <button type="submit" class="login-button">Iniciar sesión</button>
+            <a href="crearUsuario.html" class="redirect-link-button">Crear cuenta nueva</a>
+        </div>
+    </div>
+</body>
+</html>
