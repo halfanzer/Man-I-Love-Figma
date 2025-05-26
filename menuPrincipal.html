@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self'">
+    <title>Dashboard - Universidad Veracruzana</title>
+    <style>
+       
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+            font-family: Arial, sans-serif; 
+            background-color: #f4f4f8; 
+        }
+
+        .dashboard-container {
+            display: flex;
+            height: 100vh; 
+        }
+
+        
+        .sidebar {
+            width: 260px; 
+            background-color: #0047AB; 
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            padding-top: 20px; 
+        }
+
+        .sidebar-header {
+            text-align: center;
+            padding: 0 20px 20px 20px; 
+            margin-bottom: 20px; 
+            border-bottom: 1px solid #003b8f; 
+        }
+
+        .sidebar-logo {
+            max-width: 90px; 
+            margin-bottom: 10px;
+        }
+
+        .sidebar-title {
+            font-size: 1.1em; 
+            font-weight: bold;
+        }
+
+        .sidebar-nav ul {
+            list-style: none; 
+        }
+
+        .sidebar-nav li a {
+            display: flex;
+            align-items: center; 
+            color: #ffffff;
+            text-decoration: none;
+            padding: 14px 25px; 
+            font-size: 0.95em;
+            transition: background-color 0.2s ease-in-out;
+        }
+
+        .sidebar-nav li a:hover,
+        .sidebar-nav li a.active {
+            background-color: #003b8f; 
+        }
+
+        .sidebar-nav .icon {
+            margin-right: 12px; 
+            font-size: 1.2em; 
+            width: 20px; 
+            text-align: center;
+        }
+        
+        .sidebar-nav .dropdown-arrow {
+            margin-left: auto; 
+            font-size: 0.8em;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .sidebar-nav li.has-submenu.open .dropdown-arrow {
+            transform: rotate(180deg); /* Rotar flecha cuando está abierto */
+        }
+
+        
+        .sidebar-nav .submenu {
+            list-style: none;
+            padding-left: 25px; 
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        
+        .sidebar-nav li.has-submenu.open .submenu {
+             max-height: 200px; 
+        }
+        .sidebar-nav .submenu li a {
+            padding: 10px 15px 10px 20px; 
+            font-size: 0.9em;
+        }
+
+
+        
+        .main-panel {
+            flex: 1; 
+            display: flex;
+            flex-direction: column;
+        }
+
+        
+        .top-header {
+            background-color: #ffffff;
+            padding: 12px 25px; 
+            display: flex;
+            justify-content: space-between; 
+            align-items: center;
+            border-bottom: 1px solid #e0e0e0; 
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); 
+            height: 65px; 
+        }
+
+        .search-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .search-wrapper input[type="text"] {
+            padding: 9px 40px 9px 18px; 
+            border: 1px solid #d1d1d1;
+            border-radius: 20px; 
+            font-size: 0.9em;
+            width: 320px; 
+            outline: none;
+            transition: border-color 0.2s ease;
+        }
+        .search-wrapper input[type="text"]:focus {
+            border-color: #0047AB; 
+        }
+
+        .search-wrapper .search-icon-inline {
+            position: absolute;
+            right: 15px; 
+            top: 50%;
+            transform: translateY(-50%);
+            color: #777777;
+            font-size: 1em;
+        }
+
+        .user-actions {
+            display: flex;
+            align-items: center;
+        }
+
+        .user-actions .action-icon-link {
+            font-size: 1.4em; 
+            color: #555555;
+            margin-left: 22px; 
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+        .user-actions .action-icon-link:hover {
+            color: #0047AB; 
+        }
+
+
+       
+        .content-area {
+            flex: 1;
+            padding: 25px; 
+            background-color: #ffffff; 
+            overflow-y: auto; 
+        }
+
+        .content-area h2 { 
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .content-area p { 
+            line-height: 1.6;
+            color: #555;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <img src="logo_uv.jpg" alt="Universidad Veracruzana Logo" class="sidebar-logo">
+                <h1 class="sidebar-title">Universidad Veracruzana</h1>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="#" class="active"><span class="icon">&#127968;</span> Inicio</a></li> <li class="has-submenu"> <a href="#"><span class="icon">&#128200;</span> Inventario <span class="dropdown-arrow">&#9662;</span></a> <ul class="submenu">
+                            <li><a href="#">Ver Inventario</a></li>
+                            <li><a href="#">Añadir Producto</a></li>
+                            <li><a href="#">Reportes</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#"><span class="icon">&#128203;</span> Registro</a></li> </ul>
+            </nav>
+        </aside>
+
+        <div class="main-panel">
+            <header class="top-header">
+                <div class="search-wrapper">
+                    <input type="text" placeholder="Buscar">
+                    <span class="search-icon-inline">&#128269;</span> </div>
+                <div class="user-actions">
+                    <a href="#" class="action-icon-link" title="Mensajes"><span class="icon">&#9993;</span></a> <a href="#" class="action-icon-link" title="Perfil"><span class="icon">&#128100;</span></a> </div>
+            </header>
+
+            <main class="content-area">
+                <h2>hola</h2>
+                <p>:P</p>
+                <p>:p</p>
+            </main>
+        </div>
+    </div>
+
+    </body>
+</html>
